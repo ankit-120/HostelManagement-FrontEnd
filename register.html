@@ -15,24 +15,21 @@
 
         <div class="row">
 
-            <div class="text-center">
+            <div class="text-center bg-light">
                 <h1>Registration Form</h1>
-                <div class="col-4 offset-4">
+                <div class="col-4 offset-4 float-center">
                     <form>
-                        <div class="mb-3">
-                            <label for="firstname" class="form-label">First name</label>
-                            <input type="text" class="form-control" size="20" id="firstname"
-                                placeholder="Enter your first name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="middlename" class="form-label">Middle name</label>
-                            <input type="text" class="form-control" size="20" id="middlename"
-                                placeholder="Enter your middle name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastname" class="form-label">Last name</label>
-                            <input type="text" class="form-control" size="20" id="exampleInputEmail1"
-                                placeholder="Enter your last name" required>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
+                            </div>
+                            <div class="col mb-3">
+                                <input type="text" class="form-control" placeholder="Middle name" aria-label="Middle name">
+                            </div>
+                            <div class="col mb-3">
+                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+
                         </div>
 
                         <div class="mb-3">
@@ -42,38 +39,41 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputPhone" class="form-label"> Phone</label>
-                            <input type="text" minlength="10" class="form-control" name="phone" size="10"
-                                placeholder="Enter your contact no" id="exampleInputPhone" required /> <br />
+                            <label for="examplePhone" class="form-label">Contact No</label>
+                            <input type="text" minlength="10" maxlength="10" class="form-control" name="phone"
+                                placeholder="Enter your contact no" id="examplePhone" required />
                         </div>
 
 
 
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" minlength="8" class="form-control" id="exampleInputPassword1"
-                                required>
+                            <label for="Password1" class="form-label">Password</label>
+                            <input type="password" minlength="8" maxlength="12" class="form-control" id="Password1"
+                                placeholder="Enter your password here" required>
                         </div>
 
-                        <label for="flexRadioDefault">Gender :</label>
+                        <label for="flexRadioDefault">Gender :  </label>
                         <div class="form-check form-check-inline">
                             <label class="form-check-label" for="flexRadioDefault1">Male</label>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault"
+                                required>
                         </div>
                         <div class="form-check form-check-inline">
                             <label class="form-check-label" for="flexRadioDefault1">Female</label>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault"
+                                required>
                         </div>
                         <div class="form-check form-check-inline">
                             <label class="form-check-label" for="flexRadioDefault1">Other</label>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault"
+                                required>
                         </div>
-                        <br>
-                        <br>
+                        <br><br>
+
 
                         <label for="floatingSelect">Course</label>
-                        <div class="form-floating">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <div class="form-floating form-inline float-center">
+                            <select class="form-select form-select-inline-sm">
                                 <option value="B.Tech">B.Tech</option>
                                 <option value="M.Tech">M.Tech</option>
                                 <option value="BCA">BCA</option>
@@ -81,13 +81,12 @@
                                 <option value="MBA">MBA</option>
                                 <option value="MCA">MCA</option>
                             </select>
-                        </div>
-                        <br>
+                        </div><br>
 
                         <div class="mb-3">
-                            <label for="aadhaarNumber">Aadhaar Number</label>
-                            <input type="integer" min="0" minlength="12" size="12" id="aadhaarNumber"
-                                placeholder="Aadhaar number" required>
+                            <label for="aadhaarno" class="form-label"> Aadhaar Number</label>
+                            <input type="text" minlength="12" maxlength="12" class="form-control" name="phone"
+                                placeholder="Enter your aadhaar number" id="aadhaarno" required />
                         </div>
 
 
@@ -104,6 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 
 </html>
