@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Hostel Home Page</title>
+    <title>Hostel Home Page</title>
     <style>
         img {
             width: 100%;
-            height: 500px;
+            height: 540px;
             object-fit: cover;
         }
     </style>
@@ -32,13 +32,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hostel Facilities</a>
+                        <a class="nav-link" href="HealthFacility.html">Hostel Facilities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -52,7 +52,7 @@
                             <a class="dropdown-item" href="#">Guest Mode</a>
                         </div>
                     </li>
- 
+
 
                 </ul>
             </div>
@@ -60,38 +60,43 @@
     </nav>
 
 
-    <div style=" background-color:black; height: 500px; width: 100vw; border: 2px solid rgb(0, 162, 255) ;">
+    <div id="#carouselExampleIndicators" style="height: 500px; width: 100%">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item" style="width: 100%; height: 600px;">
-                    <img class="d-block w-100" src="Assets/img1.jpg" alt="First slide">
+        <div id="myCarousel" class="carousel slide" data-mdb-slide="prev" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img class="d-block w-100" src="Assets/aeclogin.jpg" alt="First slide">
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="Assets/IMG_20220711_184135.jpg" alt="Second slide">
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img class="d-block w-100" src="Assets/img4.jpg" alt="Second slide">
                 </div>
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="Assets/Active img.jpg" alt="Third slide">
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img class="d-block w-100" src="Assets/img2.jpg" alt="Third slide">
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="Assets/img3.jpg" alt="Third slide">
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img class="d-block w-100" src="Assets/img3.jpg" alt="Fourth slide">
                 </div>
-
-
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+
+
+            <button style="color: brown;" class="carousel-control-prev" type="button"
+                data-mdb-target="#carouselExampleIndicators" href="#carouselExampleIndicators" role="button"
+                data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            </button>
+            <button style="color: brown;" class="carousel-control-next" type="button"
+                data-mdb-target="#carouselExampleIndicators" href="#carouselExampleIndicators" role="button"
+                data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </button>
         </div>
     </div>
 
@@ -116,20 +121,20 @@
             </div>
         </div>
     </div>
-                   
+
     <!-- Hostel Facilities -->
 
     <div class="container my-5">
         <h2>Hostel Facilities</h2>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <i class="fas fa-utensils fa-3x mb-3"></i>
                         <h5 class="card-title">Cafeteria</h5>
                         <p class="card-text">Our cafeteria offers a range of meals to suit different dietary
                             requirements. <br><br>
-                            <a href="#" target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="learning.html" target="_blank" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </div>
@@ -140,8 +145,9 @@
                     <div class="card-body">
                         <i class="fas fa-dumbbell fa-3x mb-3"></i>
                         <h5 class="card-title">Gym</h5>
-                        <p class="card-text">Our gym is equipped with modern machines and weights to help you stay fit. <br><br>
-                            <a href="#" target="_blank" class="btn btn-primary">Explore</a>
+                        <p class="card-text">Our gym is equipped with modern machines and weights to help you stay fit.
+                            <br><br>
+                            <a href="learning.html" target="_blank" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -154,7 +160,7 @@
                         <i class="fas fa-baseball-ball fa-3x mb-3"></i>
                         <h5 class="card-title">Game Zone</h5>
                         <p class="card-text">We have basket ball club,Cricket,Vollyball everything. <br><br>
-                            <a href="#"target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="learning.html" target="_blank" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -163,13 +169,13 @@
             <div class="col-lg-4">
                 <d class="card">
                     <div class="card-body">
-                        <i class="fas fa-book-reader fa-3x mb-3"></i> 
-                        <h5 class="card-title"> 
-                             E-Library  
+                        <i class="fas fa-book-reader fa-3x mb-3"></i>
+                        <h5 class="card-title">
+                            E-Library
                         </h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis animi
                             perferendis ut nobis <br><br>
-                            <a href="learning.html"target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="learning.html" target="_blank" class="btn btn-primary">Explore</a>
 
                         </p>
                     </div>
@@ -180,9 +186,9 @@
                 <d class="card">
                     <div class="card-body">
                         <i class=" fa fa-street-view fa-3x mb-3"></i>
-                        <h5 class="card-title"> 
-                         Doctor Facility  
-                       </h5>
+                        <h5 class="card-title">
+                            Doctor Facility
+                        </h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis animi
                             perferendis ut nobis <br><br>
                             <a href="HealthFacility.html" target="_blank" class="btn btn-primary">Explore</a>
@@ -198,7 +204,7 @@
                         <h5 class="card-title">Mess Facility</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis animi
                             perferendis ut nobis <br><br>
-                            <a href="#"  target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="#" target="_blank" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -262,57 +268,64 @@
                 </div>
             </div>
 
-          
+
 
 
             <div class="container">
                 <h2 class="text-center my-4">Our Hostels</h2>
                 <div class="row">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-12 text-center">
                         <div class="card mb-4">
-                            <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_2430.jpg"
-                                class="card-img-top" alt="Hostel 1">
+                            <img src="Assets/vivekanand.jpg" class="card-img-top" alt="Hostel 1">
                             <div class="card-body">
-                                <h5 class="card-title">Vivekanand</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non
-                                    quam sed augue malesuada iaculis. Duis vitae lectus in magna sollicitudin auctor eu
+                                <h5 class="card-title">Vivekanand Hostel</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero unde
+                                    corporis totam ipsum rem voluptate.
                                     vel dolor.</p>
                                 <a href="#" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-12 text-center">
                         <div class="card mb-4">
-                            <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_2430.jpg"
-                                class="card-img-top" alt="Hostel 2">
+                            <img src="Assets/JCBoseHostel.jpg" class="card-img-top" alt="Hostel 2">
                             <div class="card-body">
-                                <h5 class="card-title">J.C Bose</h5>
-                                <p class="card-text">Phasellus nec efficitur neque. Curabitur euismod ultricies quam, ac
-                                    bibendum nulla fringilla at. Sed ut justo et lectus iaculis egestas ac ut eros.</p>
+                                <h5 class="card-title">J.C Bose Boys Hostel</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+                                    inventore facilis quod voluptas deleniti nihil!</p>
                                 <a href="#" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-12 text-center">
                         <div class="card mb-4">
-                            <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_2430.jpg"
-                                class="card-img-top" alt="Hostel 3">
+                            <img src="Assets/APJHostel.jpg" class="card-img-top" alt="Hostel 3">
                             <div class="card-body">
-                                <h5 class="card-title">A.P.J</h5>
-                                <p class="card-text">Nullam pellentesque euismod arcu at commodo. In hac habitasse
-                                    platea dictumst. Duis sit amet enim eu ex suscipit fermentum nec eu ante.</p>
+                                <h5 class="card-title">A.P.J Boys Hostel</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                                    possimus voluptates praesentium aspernatur eveniet.</p>
                                 <a href="#" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-12 text-center">
                         <div class="card mb-4">
-                            <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_2430.jpg"
-                                class="card-img-top" alt="Hostel 4">
+                            <img src="Assets/SarojiniNew.jpg" class="card-img-top" alt="Hostel 4">
                             <div class="card-body">
-                                <h5 class="card-title">Sarojani</h5>
-                                <p class="card-text">Nam quis diam facilisis, posuere magna eget, pharetra quam. Vivamus
-                                    malesuada laoreet quam, non porttitor est fringilla</p>
+                                <h5 class="card-title">Sarojini Girls Hostel</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ab
+                                    beatae eum, nesciunt incidunt quae?</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="card mb-4">
+                            <img src="Assets/hostelGround1.jpg" class="card-img-top" alt="Hostel 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Playground</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ab
+                                    beatae eum, nesciunt incidunt quae?</p>
                                 <a href="#" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
@@ -321,7 +334,8 @@
             </div>
 
 
-            <!-- TESTINOMIAL SECTION WHERE STUDENT SAY ABOUT HOSTEL -->
+            
+            
 
 
             <div class="container">
@@ -398,12 +412,6 @@
                     </button>
                 </div>
             </div>
-
-
-
-
-
-
 
 
             <!-- OUR PATRON SECTION -->
@@ -572,15 +580,5 @@
         </div>
     </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
 
 </html>
