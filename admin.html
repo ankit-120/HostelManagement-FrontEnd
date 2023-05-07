@@ -22,11 +22,16 @@
             justify-content: center;
             text-align: center;
         }
+
+        .opaque {
+            background: rgba(0, 0, 0, 0.75);
+            color: gainsboro;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-expand-md bg-dark bg-opacity-75 sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-expand-md opaque sticky-top">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,14 +40,13 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="fs-5 fw-bold p-2 text-light" style="text-decoration: none;"
-                            href="index.html">Home</a>
+                        <a class="fs-5 fw-bold p-2 text-light" style="text-decoration: none;" href="index.html">Home</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="fs-5 fw-bold p-2 text-light"
-                            href="login.html" style="text-decoration: none;">Logout</a>
+                        <a class="fs-5 fw-bold p-2 text-light" href="login.html"
+                            style="text-decoration: none;">Logout</a>
                     </li>
                 </ul>
             </div>
