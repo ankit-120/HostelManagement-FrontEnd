@@ -88,8 +88,8 @@ function loadData() {
     cols += `<td>${obj[i].street}</td>`;
     cols += `<td>${obj[i].city}</td>`;
     cols += `<td>${obj[i].state}</td>`;
-    cols += `<td><button id="button" type="button" class="btn btn-primary" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button></td>`;
-    cols += `<td><button id="delete" type="button" class="btn btn-primary" onclick="deleteStudent(this)">Delete</button></td>`;
+    cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
+    cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`;
     tr.innerHTML = cols;
     tblBody.appendChild(tr);
   }
@@ -97,6 +97,52 @@ function loadData() {
 
 //loading the table
 loadData();
+
+
+//delete student.....................................................................
+let deleteId;
+async function deleteStudent(student) {
+  let tableRow = student.parentElement.parentElement;
+  deleteId = tableRow.cells[0].innerText;
+}
+
+let deleteYes = document.getElementById("deleteYes");
+deleteYes.onclick = async(e)=>{
+  e.preventDefault();
+  let options = {
+    method: 'DELETE',
+    headers: {
+      'Authorization': token
+    },
+  }
+
+  let response = await fetch(`${BASE_URL}student/${deleteId}`, options);
+  let res = await response.json();
+  console.log(res);
+
+  //finding the id to be deleted in session storage
+  let sessionStorageArray = JSON.parse(sessionStorage.getItem("data"));
+  for (let i = 0; i < sessionStorageArray.length; i++) {
+    if (sessionStorageArray[i].id == deleteId) {
+      sessionStorageArray.splice(i, 1);
+      break;
+    }
+  }
+
+  //replacing the old object with new object in session storage
+  sessionStorage.setItem("data", JSON.stringify(sessionStorageArray));
+
+  //remove child(tr from table body)
+  let tblBody = document.getElementById("tableBody");
+  while (tblBody.firstChild) {
+    tblBody.removeChild(tblBody.firstChild);
+  }
+
+  //loading the new data after update
+  loadData();
+
+}
+//delete ends here....................................................................
 
 
 //update student
@@ -182,7 +228,7 @@ edit.onclick = async (e) => {
 
   //remove child(tr from table body)
   let tblBody = document.getElementById("tableBody");
-  while(tblBody.firstChild){
+  while (tblBody.firstChild) {
     tblBody.removeChild(tblBody.firstChild);
   }
 
