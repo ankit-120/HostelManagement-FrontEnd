@@ -88,7 +88,8 @@ function loadData() {
     cols += `<td>${obj[i].street}</td>`;
     cols += `<td>${obj[i].city}</td>`;
     cols += `<td>${obj[i].state}</td>`;
-    cols += `<td><button id="button" type="button" class="btn btn-danger" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button></td>`;
+    cols += `<td><button id="button" type="button" class="btn btn-primary" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button></td>`;
+    cols += `<td><button id="delete" type="button" class="btn btn-primary" onclick="deleteStudent(this)">Delete</button></td>`;
     tr.innerHTML = cols;
     tblBody.appendChild(tr);
   }
