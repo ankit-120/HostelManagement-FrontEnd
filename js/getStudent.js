@@ -145,7 +145,7 @@ deleteYes.onclick = async(e)=>{
 //delete ends here....................................................................
 
 
-//update student
+//update student........................................................
 let id;
 function update(obj) {
   console.log(obj.parentElement.parentElement);
@@ -257,4 +257,5 @@ edit.onclick = async (e) => {
     console.log(res);
   }
 }
+// update ends here.............................................
 
