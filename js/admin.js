@@ -3,6 +3,9 @@ console.log(token)
 
 let BASE_URL = 'http://localhost:8080/hms/';
 
+//setting user name at navbar
+document.getElementById("userSpan").innerText = sessionStorage.getItem("username")
+
 //fetch student fom db and set it in session storage
 let btn = document.getElementById("getStudent")
 let res;
