@@ -23,7 +23,8 @@ console.log(token)
             console.log(res.message)
         }
         console.log(res)
-        localStorage.setItem("data",JSON.stringify(res));
+        // localStorage.setItem("data",JSON.stringify(res));
+        sessionStorage.setItem("data",JSON.stringify(res));
         window.location.href="getStudent.html";
     }
 
