@@ -18,6 +18,7 @@ submit.onclick = async (e) =>{
     user = {
         firstName : firstName,
         middleName : middleName,
+        roll:1234,
         lastName : lastName,
         mobile : contact,
         aadhaar : aadhaarno,
