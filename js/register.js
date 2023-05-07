@@ -3,6 +3,7 @@ let BASE_URL='http://localhost:8080/hms/';
 let submit = document.getElementById("submit");
 submit.onclick = async (e) =>{
     e.preventDefault();
+
     let firstName = document.getElementById("firstName").value;
     let middleName = document.getElementById("middleName").value;
     let lastName = document.getElementById("lastName").value;
