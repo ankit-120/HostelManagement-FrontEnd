@@ -7,7 +7,7 @@ else{
     let submit = document.getElementById("submit");
     submit.onclick = async (e) =>{
         e.preventDefault();
-    
+        let roll = document.getElementById("roll").value;
         let firstName = document.getElementById("firstName").value;
         let middleName = document.getElementById("middleName").value;
         let lastName = document.getElementById("lastName").value;
@@ -23,7 +23,7 @@ else{
         user = {
             firstName : firstName,
             middleName : middleName,
-            roll:1234,
+            roll:roll,
             lastName : lastName,
             mobile : contact,
             aadhaar : aadhaarno,
