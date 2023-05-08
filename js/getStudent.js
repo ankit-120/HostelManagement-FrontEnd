@@ -240,3 +240,12 @@ edit.onclick = async (e) => {
 }
 // update ends here.............................................
 
+
+
+//back button
+let backBtn = document.getElementById("back");
+backBtn.onclick = () =>{
+  localStorage.removeItem("data");
+  window.location.href="admin.html";
+}
+

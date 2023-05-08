@@ -186,4 +186,12 @@ deleteYes.onclick = async (e) => {
 
 
 
+//back button
+let backBtn = document.getElementById("back");
+backBtn.onclick = () =>{
+  localStorage.removeItem("adminData");
+  window.location.href="admin.html";
+}
+
+
 

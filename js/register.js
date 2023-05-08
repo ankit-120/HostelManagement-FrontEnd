@@ -65,3 +65,8 @@ logout.onclick = async () => {
     localStorage.removeItem("username");
     window.location.href = "login.html"
 }
+
+let backBtn = document.getElementById("back");
+backBtn.onclick = () =>{
+    window.location.href="admin.html";
+}
