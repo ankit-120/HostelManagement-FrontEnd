@@ -1,11 +1,15 @@
 let token = localStorage.getItem('token');
-if(token==null){
+if (token == null) {
     window.location.href = "admin.html";
 }
-else{
-    let BASE_URL='http://localhost:8080/hms/';
+else {
+    let BASE_URL = 'http://localhost:8080/hms/';
+
+    //setting user name at navbar
+    document.getElementById("userSpan").innerText = localStorage.getItem("username");
+
     let submit = document.getElementById("submit");
-    submit.onclick = async (e) =>{
+    submit.onclick = async (e) => {
         e.preventDefault();
         let roll = document.getElementById("roll").value;
         let firstName = document.getElementById("firstName").value;
@@ -19,36 +23,45 @@ else{
         let street = document.getElementById("street").value;
         let city = document.getElementById("city").value;
         let state = document.getElementById("state").value;
-    
+
         user = {
-            firstName : firstName,
-            middleName : middleName,
-            roll:roll,
-            lastName : lastName,
-            mobile : contact,
-            aadhaar : aadhaarno,
-            gender : gender,
-            course : course,
-            email : email,
-            street : street,
-            city : city,
-            state : state
+            firstName: firstName,
+            middleName: middleName,
+            roll: roll,
+            lastName: lastName,
+            mobile: contact,
+            aadhaar: aadhaarno,
+            gender: gender,
+            course: course,
+            email: email,
+            street: street,
+            city: city,
+            state: state
         };
-    
+
         let data = JSON.stringify(user);
-        let options={
-            method:'POST',
+        let options = {
+            method: 'POST',
             headers: {
-                'Authorization':token,
+                'Authorization': token,
                 'Content-Type': 'application/json',
-              },
-            body:data
+            },
+            body: data
         }
-        let response = await fetch(`${BASE_URL}student/register`,options);
-        if(response.status==201){
+        let response = await fetch(`${BASE_URL}student/register`, options);
+        if (response.status == 201) {
             let res = await response.json();
             console.log(res);
-            window.location.href="admin.html"
+            window.location.href = "admin.html"
         }
     }
+}
+
+
+//logout
+let logout = document.getElementById("logout")
+logout.onclick = async () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    window.location.href = "login.html"
 }

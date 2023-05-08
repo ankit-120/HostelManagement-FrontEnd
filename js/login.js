@@ -23,8 +23,9 @@ login.onclick = async (e) => {
         console.log(res.token)
         console.log(res.user)
         localStorage.setItem("token","Bearer "+res.token);
-        sessionStorage.setItem("username",res.user.fullName);
+        localStorage.setItem("username",res.user.fullName);
         window.location.href="admin.html"
+        // localStorage.removeItem("token");
     }
     console.log("leaving page")
 }

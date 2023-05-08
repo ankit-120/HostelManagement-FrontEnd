@@ -22,8 +22,30 @@
 </head>
 
 <body>
-    <div class="container-fluid p-3 mb-3 fs-4 text-center opaque">
-        <h2 class="text-center text-light fs-1">List of Students</h2>
+    <div class="container-fluid p-3 mb-3 text-center opaque">
+        <div class="row justify-content-between">
+            <div class="col-4 p-2 fs-3" style="text-align: left;">
+                HMS
+            </div>
+            <div class="col-4 p-2 fs-3">
+                List of Students
+            </div>
+            <div class="col-4 d-flex justify-content-end">
+                <div class="dropdown">
+                    <div class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <span class="fs-3 text-light"><i class="bi bi-person-circle"></i></span>
+                        <span id="userSpan" class="fs-6 p-2 text-light"></span>
+
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
     </div>
     <div class="container">
         <div class="row">
@@ -99,13 +121,13 @@
                                 </div>
 
                                 <div class="col-10 offset-1 d-flex justify-content-between my-1">
-                                    
+
                                     <div style="width: 300px;">
                                         <label for="contact" class="form-label">Contact No</label>
                                         <input type="text" minlength="10" maxlength="10" class="form-control"
                                             name="phone" placeholder="Enter your contact no" id="contact" required />
                                     </div>
-                                   
+
                                     <div style="width: 300px;">
                                         <label for="aadhaarno" class="form-label"> Aadhaar
                                             Number</label>
@@ -181,7 +203,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

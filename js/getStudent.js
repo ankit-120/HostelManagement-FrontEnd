@@ -1,6 +1,9 @@
 let token = localStorage.getItem("token");
 console.log(token)
 
+//setting user name at navbar
+document.getElementById("userSpan").innerText = localStorage.getItem("username");
+
 // student doesnot exist check................................
 const nameList = document.getElementById('myTable');
 const nameSearch = document.getElementById('searchBox');
@@ -39,35 +42,13 @@ let BASE_URL = 'http://localhost:8080/hms/';
 
 function loadData() {
 
-  //getting data from session storage
-  let student = sessionStorage.getItem("data");
+  //getting data from local Storage
+  let student = localStorage.getItem("data");
   // localStorage.removeItem("data");
   let obj = JSON.parse(student);
   let r = obj.length;
   console.log(r)
 
-
-  // let table = document.getElementById("myTable");
-  // for (let i = 0; i < r; i++) {
-  //   let newRow = table.insertRow();
-  //   let cols = "";
-  //   cols += `<td>${obj[i].id}</td>`;
-  //   cols += `<td>${obj[i].roll}</td>`;
-  //   cols += `<td>${obj[i].firstName}</td>`;
-  //   cols += `<td>${obj[i].middleName}</td>`;
-  //   cols += `<td>${obj[i].lastName}</td>`;
-  //   cols += `<td>${obj[i].aadhaar}</td>`;
-  //   cols += `<td>${obj[i].mobile}</td>`;
-  //   cols += `<td>${obj[i].email}</td>`;
-  //   cols += `<td>${obj[i].course}</td>`;
-  //   cols += `<td>${obj[i].gender}</td>`;
-  //   cols += `<td>${obj[i].street}</td>`;
-  //   cols += `<td>${obj[i].city}</td>`;
-  //   cols += `<td>${obj[i].state}</td>`;
-  //   cols += `<td><button id="button" type="button" class="btn btn-danger" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button></td>`;
-
-  //   newRow.innerHTML = cols;
-  // }
 
   //creating dynamic table body
   let tblBody = document.getElementById("tableBody");
@@ -120,17 +101,17 @@ deleteYes.onclick = async(e)=>{
   let res = await response.json();
   console.log(res);
 
-  //finding the id to be deleted in session storage
-  let sessionStorageArray = JSON.parse(sessionStorage.getItem("data"));
-  for (let i = 0; i < sessionStorageArray.length; i++) {
-    if (sessionStorageArray[i].id == deleteId) {
-      sessionStorageArray.splice(i, 1);
+  //finding the id to be deleted in local Storage
+  let localStorageArray = JSON.parse(localStorage.getItem("data"));
+  for (let i = 0; i < localStorageArray.length; i++) {
+    if (localStorageArray[i].id == deleteId) {
+      localStorageArray.splice(i, 1);
       break;
     }
   }
 
-  //replacing the old object with new object in session storage
-  sessionStorage.setItem("data", JSON.stringify(sessionStorageArray));
+  //replacing the old object with new object in local Storage
+  localStorage.setItem("data", JSON.stringify(localStorageArray));
 
   //remove child(tr from table body)
   let tblBody = document.getElementById("tableBody");
@@ -214,17 +195,17 @@ edit.onclick = async (e) => {
     state: state
   };
 
-  //finding the id to be updated in session storage
-  let sessionStorageArray = JSON.parse(sessionStorage.getItem("data"));
-  for (let i = 0; i < sessionStorageArray.length; i++) {
-    if (sessionStorageArray[i].id == id) {
-      sessionStorageArray[i] = user1;
+  //finding the id to be updated in local Storage
+  let localStorageArray = JSON.parse(localStorage.getItem("data"));
+  for (let i = 0; i < localStorageArray.length; i++) {
+    if (localStorageArray[i].id == id) {
+      localStorageArray[i] = user1;
       break;
     }
   }
 
-  //replacing the old object with new object in session storage
-  sessionStorage.setItem("data", JSON.stringify(sessionStorageArray));
+  //replacing the old object with new object in local Storage
+  localStorage.setItem("data", JSON.stringify(localStorageArray));
 
   //remove child(tr from table body)
   let tblBody = document.getElementById("tableBody");

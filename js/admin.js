@@ -1,12 +1,16 @@
 let token = localStorage.getItem("token");
 console.log(token)
 
+if(token==null){
+    window.location.href = "login.html";
+}
+
 let BASE_URL = 'http://localhost:8080/hms/';
 
 //setting user name at navbar
-document.getElementById("userSpan").innerText = sessionStorage.getItem("username")
+document.getElementById("userSpan").innerText = localStorage.getItem("username")
 
-//fetch student fom db and set it in session storage
+//fetch student fom db and set it in local Storage
 let btn = document.getElementById("getStudent")
 let res;
 btn.onclick = async () => {
@@ -26,13 +30,13 @@ btn.onclick = async () => {
     }
     console.log(res)
     // localStorage.setItem("data",JSON.stringify(res));
-    sessionStorage.setItem("data", JSON.stringify(res));
+    localStorage.setItem("data", JSON.stringify(res));
     window.location.href = "getStudent.html";
 }
 
 
 
-//fetch admin fom db and set it in session storage
+//fetch admin fom db and set it in local Storage
 let getAdmin = document.getElementById("getAdmin")
 getAdmin.onclick = async () => {
     let options = {
@@ -51,12 +55,9 @@ getAdmin.onclick = async () => {
         console.log(res.message)
     }
     console.log(res);
-    sessionStorage.setItem("adminData", JSON.stringify(res));
+    localStorage.setItem("adminData", JSON.stringify(res));
     window.location.href = "getAdmin.html";
 }
-
-
-
 
 
 
@@ -67,4 +68,4 @@ logout.onclick = async () => {
     localStorage.removeItem("username");
     window.location.href = "login.html"
 }
-// }
+

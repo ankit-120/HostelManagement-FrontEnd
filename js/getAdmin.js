@@ -4,6 +4,9 @@ console.log(token);
 //Base url
 let BASE_URL = 'http://localhost:8080/hms/';
 
+//setting user name
+document.getElementById("userSpan").innerText = localStorage.getItem("username");
+
 // student doesnot exist check................................
 const nameList = document.getElementById('myTable');
 const nameSearch = document.getElementById('searchBox');
@@ -38,8 +41,8 @@ search.addEventListener('click', (e) => {
 
 function loadData() {
 
-    //getting data from session storage
-    let adminList = sessionStorage.getItem("adminData");
+    //getting data from local Storage
+    let adminList = localStorage.getItem("adminData");
     let obj = JSON.parse(adminList);
     let r = obj.length;
 
@@ -91,17 +94,17 @@ edit.onclick = async (e) => {
         email: email
     };
 
-    //finding the id to be updated in session storage
-    let sessionStorageArray = JSON.parse(sessionStorage.getItem("adminData"));
-    for (let i = 0; i < sessionStorageArray.length; i++) {
-        if (sessionStorageArray[i].id == id) {
-            sessionStorageArray[i] = user1;
+    //finding the id to be updated in local Storage
+    let localStorageArray = JSON.parse(localStorage.getItem("adminData"));
+    for (let i = 0; i < localStorageArray.length; i++) {
+        if (localStorageArray[i].id == id) {
+            localStorageArray[i] = user1;
             break;
         }
     }
 
-    //replacing the old object with new object in session storage
-    sessionStorage.setItem("adminData", JSON.stringify(sessionStorageArray));
+    //replacing the old object with new object in local Storage
+    localStorage.setItem("adminData", JSON.stringify(localStorageArray));
 
     //remove child(tr from table body)
     let tblBody = document.getElementById("tableBody");
@@ -157,17 +160,17 @@ deleteYes.onclick = async (e) => {
     let res = await response.json();
     console.log(res);
 
-    //finding the id to be deleted in session storage
-    let sessionStorageArray = JSON.parse(sessionStorage.getItem("data"));
-    for (let i = 0; i < sessionStorageArray.length; i++) {
-        if (sessionStorageArray[i].id == deleteId) {
-            sessionStorageArray.splice(i, 1);
+    //finding the id to be deleted in local Storage
+    let localStorageArray = JSON.parse(localStorage.getItem("data"));
+    for (let i = 0; i < localStorageArray.length; i++) {
+        if (localStorageArray[i].id == deleteId) {
+            localStorageArray.splice(i, 1);
             break;
         }
     }
 
-    //replacing the old object with new object in session storage
-    sessionStorage.setItem("adminData", JSON.stringify(sessionStorageArray));
+    //replacing the old object with new object in local Storage
+    localStorage.setItem("adminData", JSON.stringify(localStorageArray));
 
     //remove child(tr from table body)
     let tblBody = document.getElementById("tableBody");
