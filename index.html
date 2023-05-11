@@ -22,7 +22,7 @@
         }
 
         .scrolling-notice {
-            height: 400px;
+            height: 100%;
             overflow: hidden;
             position: relative;
         }
@@ -34,7 +34,11 @@
             position: absolute;
             top: 40px;
             left: 0;
-            animation: scroll-notice 10s linear infinite;
+            animation: scroll-notice 15s linear infinite;
+        }
+
+        .scrolling-notice:hover ul {
+            animation-play-state: paused;
         }
 
         .fixed-heading {
@@ -73,7 +77,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#hostelfacility">Our Hostels</a></li>
-                    <li class="nav-item dropdown d-flex">
+                    <li class="nav-item dropdown d-md-flex">
                         <a class="nav-link" href="#contact">Contact Us</a>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">User</a>
@@ -108,7 +112,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="3000">
-                <img src="Assets/Active img.jpg" style="object-fit: cover;" class="d-block w-100" alt="...">
+                <img src="Assets/Active img.jpg" class="d-block w-100" alt="...">
 
             </div>
 
@@ -148,86 +152,87 @@
                     the students by promoting sports, cultural activities and interpersonal development. Our hostel
                     provides a comfortable and affordable accommodation for college students. We offer a range of
                     facilities including a gym, library, and common room.</p>
-                <a href="ourHostels.html" class="btn btn-primary">Learn More</a>
+                <a href="ourHostels.html" class="btn btn-primary mb-2">Learn More</a>
             </div>
             <div class="col-lg-6">
                 <img src="https://lh3.googleusercontent.com/p/AF1QipMH3gdHoOLA0e-RfGWiO_S0JeEkuQNUtxo2TkNY=s680-w680-h510"
-                    alt="College Hostel" class="img-fluid">
+                    alt="College Hostel" class="img-fluid" style="border-radius: 10px;">
             </div>
         </div>
     </div>
 
     <!-- -------------------------------------------------NEWS AND NOTICES------------------------------------------------- -->
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row">
-            <div class="col-md-4">
-                <section id="notice" class="bg-light text-dark scrolling-notice">
-                    <h2 class="text-center">Important Notices</h2>
+            <div class="col-md-4 mb-2" style="height: 392px;">
+                <section id="notice" class="bg-light text-dark scrolling-notice"
+                    style="border-radius: 10px; border:1px solid rgb(0, 0, 0);">
+                    <h2 class="text-center sticky-top bg-dark text-light p-2">Important Notices</h2>
                     <ul class="list-group">
-                        <li class="list-group-item mb-3">Guests are not allowed to stay overnight without prior
+                        <li class="list-group-item mt-4 mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">
+                            Guests are not allowed to stay overnight without prior
                             permission from the hostel authority.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Mess
+                            timing for tomorrow will be changed due to maintenance
                             work.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm ">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm ">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Game room
+                            will be closed for maintenance work from 10th to
                             15th May.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Mess
+                            timing for tomorrow will be changed due to maintenance
                             work.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm ">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm ">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Game room
+                            will be closed for maintenance work from 10th to
                             15th May.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Mess
+                            timing for tomorrow will be changed due to maintenance
                             work.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm ">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm ">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Game room
+                            will be closed for maintenance work from 10th to
                             15th May.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Mess
+                            timing for tomorrow will be changed due to maintenance
                             work.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm ">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm ">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Game room
+                            will be closed for maintenance work from 10th to
                             15th May.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Noise complaints have been received, please keep noise
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Noise
+                            complaints have been received, please keep noise
                             levels down.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
                     </ul>
                 </section>
             </div>
 
-            <div class="col-md-4">
-                <section id="about" class="bg-light">
-                    <h2 class="fw-bold text-center">About Our Hostel</h2>
+            <div class="col-md-4 mb-2" style="height: 338px;">
+                <section id="about" class="bg-light" style="border-radius: 10px; border:1px solid rgb(0, 0, 0);">
+                    <h2 class="text-light text-center bg-dark p-2">About Our Hostel</h2>
                     <div class="row p-3">
                         <p>Asansol Engineering College Hostels is a popular accommodation option for engineering
                             students studying in Asansol. The hostel is known for its modern amenities,
-                            comfortable living spaces, and affordable pricing, making it an ideal choice for
+                            comfortable living spaces, and affordable pricing making choice for
                             students seeking a home away from home. The hostel provides a safe and secure environment
-                            for students, with round-the-clock security personnel stationed at the premises. It also
-                            offers wide range of facilities such as a common room, study area, mess hall and
+                            for students, with round-the-clock security personnel stationed at the premises. It offers
+                            facilities such as a common room,study area,cafe,mess hall and
                             recreational facilities to ensure that students can enjoy a well-rounded
                             experience.</p>
                         </p>
@@ -235,75 +240,76 @@
                 </section>
             </div>
 
-            <div class="col-md-4">
-                <section id="news" class="bg-light text-dark scrolling-notice">
-                    <h2 class="text-center">Latest News</h2>
+            <div class="col-md-4 mb-2"style="height: 392px;">
+                <section id="news" class="bg-light text-dark scrolling-notice"
+                    style="border-radius: 10px; border:1px solid rgb(0, 0, 0);">
+                    <h2 class="text-center sticky-top bg-dark text-light p-2">Latest News</h2>
                     <ul class="list-group">
-                        <li class="list-group-item mb-3">College to conduct online exams for odd semester students.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mt-4 mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">
+                            College to conduct online exams for odd semester students.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">University announces new date for postponed semester exams.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">
+                            University announces new date for postponed semester exams.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Annual sports tournament to be held on campus next month.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Annual
+                            sports tournament to be held on campus next month.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Chess tournament organized by the college attracts
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Chess
+                            tournament organized by the college attracts
                             participants from across the state.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">College football team emerges victorious in intercollegiate
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">College
+                            football team emerges victorious in intercollegiate
                             championship.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">College to conduct online exams for odd semester students.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">College
+                            to conduct online exams for odd semester students.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">University announces new date for postponed semester exams.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">
+                            University announces new date for postponed semester exams.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Annual sports tournament to be held on campus next month.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Annual
+                            sports tournament to be held on campus next month.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Chess tournament organized by the college attracts
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Chess
+                            tournament organized by the college attracts
                             participants from across the state.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">College to conduct online exams for odd semester students.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">College
+                            to conduct online exams for odd semester students.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">University announces new date for postponed semester exams.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">
+                            University announces new date for postponed semester exams.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Annual sports tournament to be held on campus next month.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Annual
+                            sports tournament to be held on campus next month.
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">Chess tournament organized by the college attracts
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">Chess
+                            tournament organized by the college attracts
                             participants from across the state.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">College football team emerges victorious in intercollegiate
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">College
+                            football team emerges victorious in intercollegiate
                             championship.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item mb-3">College football team emerges victorious in intercollegiate
+                        <li class="list-group-item mb-3" onmouseover="stopScroll()" onmouseout="startScroll()">College
+                            football team emerges victorious in intercollegiate
                             championship.
-                            <a href="http://aecwb.edu.in/?pn=1 " 
-                                class="btn btn-primary btn-sm">ReadMore</a>
+                            <a href="http://aecwb.edu.in/?pn=1 " class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
                     </ul>
                 </section>
@@ -327,7 +333,7 @@
                     <div class="card-body">
                         <h4 class="card-title"><b>Vivekanand Hostel</b></h4>
                         <p class="card-text">Vivekanand Boys Hostel provides accommodation facilities exclusively
-                            for  <strong>1st-year male students</strong> .</p>
+                            for <strong>1st-year male students</strong> .</p>
                         <a href="ourHostels.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
@@ -342,7 +348,7 @@
                     <div class="card-body">
                         <h4 class="card-title"><b>J.C Bose Boys Hostel</b></h4>
                         <p class="card-text">J.C Bose Boys Hostel provides accommodation facilities exclusively
-                            for <strong>2nd & 3rd-year male students</strong>  .</p>
+                            for <strong>2nd & 3rd-year male students</strong> .</p>
                         <a href="ourHostels.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
@@ -388,7 +394,7 @@
                         <h5 class="card-title">Gymnesium</h5>
                         <p class="card-text">Our gym is equipped with modern machines and weights to help you stay fit.
                             <br><br>
-                            <a href="gym.html"  class="btn btn-primary">Explore</a>
+                            <a href="gym.html" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -401,7 +407,7 @@
                         <h5 class="card-title">E-Library</h5>
                         <p class="card-text">Our hostel provides an E-library facility for convenient access to digital
                             resources. <br><br>
-                            <a href="learning.html"  class="btn btn-primary">Explore</a>
+                            <a href="learning.html" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -416,7 +422,7 @@
                         </h5>
                         <p class="card-text">Our hostel provides on-call doctor facility for the residents in emergency
                             case. <br><br>
-                            <a href="HealthFacility.html"  class="btn btn-primary">Explore</a>
+                            <a href="HealthFacility.html" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -429,7 +435,7 @@
                         <h5 class="card-title">Mess Facility</h5>
                         <p class="card-text">Our hostel provides a hygienic and nutritious mess facility to all the
                             residents.<br><br>
-                            <a href="messRoutine.html"  class="btn btn-primary">Explore</a>
+                            <a href="messRoutine.html" class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -449,17 +455,25 @@
                     class="active"></button>
                 <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="5"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="6"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="7"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="8"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="9"></button>
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="10"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner" data-bs-interval="2000">
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center">
                         <div class="card border-0">
                             <div class="card-body text-center">
-                                <p class="card-text">"I have been living in this hostel for the past year and it
+                                <p class="card-text">"I have been living in hostel for the past year and it
                                     has been a wonderful experience. The facilities are top-notch and the staff
                                     is very friendly and helpful.The hostel has all the facilities a student
                                     needs, from a
-                                    well-equipped gym to a spacious library. I would highly recommend this
+                                    well-equipped gym to a spacious library. I would highly recommend
                                     hostel to anyone looking for a comfortable and convenient place to stay."
                                 </p>
                                 <h5 class="card-title">Aman Kumar, CSE (2019-2023)</h5>
@@ -468,37 +482,172 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="2000">
                     <div class="d-flex justify-content-center">
                         <div class="card border-0">
                             <div class="card-body text-center">
                                 <p class="card-text">"The hostel has all the facilities a student needs, from a
-                                    well-equipped gym to a spacious library. I would highly recommend this
+                                    well-equipped gym to a spacious library. I would highly recommend
                                     hostel to anyone looking for a comfortable and convenient place to stay.I
-                                    have been living in this hostel for the past year and it
+                                    have been living in hostel for the past year and it
                                     has been a wonderful experience. The facilities are top-notch and the staff
                                     is very friendly and helpful.The hostel has all the facilities a student
                                     needs, from a
                                     well-equipped gym to a spacious library."
                                 </p>
-                                <h5 class="card-title">Ankit Kumar, ECE (2018-2022)</h5>
-                                <!-- <p class="card-text">Ece Student</p> -->
+                                <h5 class="card-title">Ankit Kumar, CSE (2019-2023)</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="2000">
                     <div class="d-flex justify-content-center">
                         <div class="card border-0">
                             <div class="card-body text-center">
                                 <p class="card-text">"The hostel staff is very supportive and always ready to
                                     help with any issues. The rooms are clean and well-maintained, and the food
-                                    is delicious. I would definitely recommend this hostel to my friends.I
-                                    have been living in this hostel for the past year and it
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
                                     has been a wonderful experience. The facilities are top-notch and the staff
                                     is very friendly and helpful.The hostel has all the facilities a student
                                     needs, from a well-equipped gym to a spacious library."</p>
-                                <h5 class="card-title">Nikhil Kumar, CE (2016-2020)</h5>
+                                <h5 class="card-title">Lokesh Kumar Singh, CSE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Harsh Kashyap, CSE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Gulshan Kumar Singh, CSE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Akhilesh Yadav, CSE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Nikhil Kumar, CE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Abhishek Anand, CSE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Uttam Kumar, IT (2016-2020)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Ujjwal Kumar, ECE (2016-2020)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <p class="card-text">"The hostel staff is very supportive and always ready to
+                                    help with any issues. The rooms are clean and well-maintained, and the food
+                                    is delicious. I would definitely recommend hostel to my friends.I
+                                    have been living in hostel for the past year and it
+                                    has been a wonderful experience. The facilities are top-notch and the staff
+                                    is very friendly and helpful.The hostel has all the facilities a student
+                                    needs, from a well-equipped gym to a spacious library."</p>
+                                <h5 class="card-title">Mayank Kumar, ME (2016-2020)</h5>
                                 <!-- <p class="card-text">Cse Student</p> -->
                             </div>
                         </div>
@@ -524,27 +673,31 @@
     <div class="container">
         <h3 class="fw-bold text-center my-4">OUR PATRONS</h3>
         <div class="row">
-            <div class="col-md-3">
-                <img src="http://aecwb.edu.in/img/dignitaries/4.jpg" class="img-fluid mb-3" alt="Principal AEC">
+            <div class="col-md-3 text-center">
+                <img src="http://aecwb.edu.in/img/dignitaries/4.jpg" style="border-radius: 100px;"
+                    class="img-fluid mb-3" alt="Principal AEC">
                 <h4>DR. ANILESH DEY</h4>
                 <p class="fs-5"><b>Principal</b> <br></p>
                 <p>"Education is the manifestation of the perfection already in man" - Swami Vivekananda</p>
             </div>
-            <div class="col-md-3">
-                <img src="http://aecwb.edu.in/img/dignitaries/2.jpg" class="img-fluid mb-3" alt="Hostel Warden">
+            <div class="col-md-3 text-center">
+                <img src="http://aecwb.edu.in/img/dignitaries/2.jpg" style="border-radius: 100px;"
+                    class="img-fluid mb-3" alt="Hostel Warden">
                 <h4>SRI T K GHOSH</h4>
                 <p class="fs-5"><b>Warden</b> <br></p>
                 <p>"Do not measure success by money measure it by skill's improvement"</p>
             </div>
-            <div class="col-md-3">
-                <img src="http://aecwb.edu.in/img/dignitaries/4.jpg" class="img-fluid mb-3" alt="Hostel Superintendent">
+            <div class="col-md-3 text-center">
+                <img src="http://aecwb.edu.in/img/dignitaries/4.jpg" style="border-radius: 100px;"
+                    class="img-fluid mb-3" alt="Hostel Superintendent">
                 <h4>AJAY SUTRADHAR</h4>
                 <p class="fs-5"><b>Superintendent</b> <br></p>
                 <p>"Education is the passport to the future, for tomorrow belongs to those who prepare for it
                     today."</p>
             </div>
-            <div class="col-md-3">
-                <img src="http://aecwb.edu.in/img/dignitaries/1.jpg" class="img-fluid mb-3" alt="Mess-in-Charge">
+            <div class="col-md-3 text-center">
+                <img src="http://aecwb.edu.in/img/dignitaries/1.jpg" style="border-radius: 100px;"
+                    class="img-fluid mb-3" alt="Mess-in-Charge">
                 <h4>SRI TARANJIT SINGH</h4>
                 <p class="fs-5"><b>Mess-in-Charge</b> <br></p>
                 <p>"Polish your skills until you achieve your dreams"</p>
@@ -561,7 +714,7 @@
                 E<br /><br />
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.8903030971587!2d86.94943451498071!3d23.715611084606643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc58a159afc4aaf10!2zMjPCsDQyJzU2LjIiTiA4NsKwNTcnMDUuOCJF!5e0!3m2!1sen!2sin!4v1651039439295!5m2!1sen!2sin"
-                    width="95%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="90%" height="300px" style="border: 2px solid black;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </p>
             <p><i class="fa fa-phone-alt mr-2"></i>Mobile : 9073683912 / 8100192408<br />Phone no.:
@@ -571,19 +724,31 @@
             </p>
 
             <div class="text-center py-2" style="width:100%">
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
-                     href="https://twitter.com/AsansolCollege"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
-                     href="https://www.facebook.com/AEC1998/"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
-                     href="https://www.linkedin.com/company/aec-social"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
-                     href="https://www.instagram.com/asansol_engineering_college/"><i
-                        class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                    style="width: 40px; height: 40px;color: black; border: 1px solid"
+                    href="https://twitter.com/AsansolCollege"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                    style="width: 40px; height: 40px;color: black;border: 1px solid"
+                    href="https://www.facebook.com/AEC1998/"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                    style="width: 40px; height: 40px;color: black;border: 1px solid"
+                    href="https://www.linkedin.com/company/aec-social"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                    style="width: 40px; height: 40px;color: black;border: 1px solid"
+                    href="https://www.instagram.com/asansol_engineering_college/"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
+
+    <script>
+        function stopScroll() {
+            document.querySelector('.scrolling-notice ul').style.animationIterationCount = 'paused';
+        }
+        function startScroll() {
+            document.querySelector('.scrolling-notice ul').style.animationIterationCount = 'running';
+        }
+
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
