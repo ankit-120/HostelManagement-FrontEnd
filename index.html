@@ -20,6 +20,42 @@
             background: rgba(0, 0, 0, 0.75);
             color: gainsboro;
         }
+
+        .scrolling-notice {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scrolling-notice ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            animation: scroll-notice 10s linear infinite;
+        }
+
+        .fixed-heading {
+            position: sticky;
+            top: 0;
+            background-color: #343a40;
+            padding: 10px;
+        }
+
+        @keyframes scroll-notice {
+
+            0%,
+            20%,
+            100% {
+                transform: translateY(0);
+            }
+
+            90% {
+                transform: translateY(calc(-100% + 1px));
+            }
+        }
     </style>
 </head>
 
@@ -112,7 +148,7 @@
                     the students by promoting sports, cultural activities and interpersonal development. Our hostel
                     provides a comfortable and affordable accommodation for college students. We offer a range of
                     facilities including a gym, library, and common room.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <a href="ourHostels.html" class="btn btn-primary">Learn More</a>
             </div>
             <div class="col-lg-6">
                 <img src="https://lh3.googleusercontent.com/p/AF1QipMH3gdHoOLA0e-RfGWiO_S0JeEkuQNUtxo2TkNY=s680-w680-h510"
@@ -125,31 +161,57 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <section id="notice" class="bg-dark text-light">
+                <section id="notice" class="bg-light text-dark scrolling-notice">
                     <h2 class="text-center">Important Notices</h2>
                     <ul class="list-group">
-                        <li class="list-group-item">Guests are not allowed to stay overnight without prior
+                        <li class="list-group-item mb-3">Guests are not allowed to stay overnight without prior
                             permission from the hostel authority.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item">Mess timing for tomorrow will be changed due to maintenance
+                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
                             work.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm ">ReadMore</a>
                         </li>
-                        <li class="list-group-item">Game room will be closed for maintenance work from 10th to
+                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
                             15th May.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item">Noise complaints have been received, please keep noise
+                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                            work.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm ">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                            15th May.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                            work.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm ">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                            15th May.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Mess timing for tomorrow will be changed due to maintenance
+                            work.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm ">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Game room will be closed for maintenance work from 10th to
+                            15th May.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Noise complaints have been received, please keep noise
                             levels down.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
-                                class="btn btn-primary btn-sm">ReadMore</a>
-                        </li>
-                        <li class="list-group-item">Fire drill scheduled for Wednesday at 10 AM.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
                     </ul>
@@ -158,51 +220,89 @@
 
             <div class="col-md-4">
                 <section id="about" class="bg-light">
-                    <h2 class="text-center">About Our Hostel</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>Asansol Engineering Hostel is a popular accommodation option for engineering
-                                students studying in Asansol. The hostel is known for its modern amenities,
-                                comfortable living spaces, and affordable pricing, making it an ideal choice for
-                                students seeking a home away from home.
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <p> The hostel provides a safe and secure environment for students, with
-                                round-the-clock security personnel stationed at the premises. It also offers a
-                                range of facilities such as a common room, study area, mess hall, and
-                                recreational facilities to ensure that students can enjoy a well-rounded
-                                experience.</p>
-                            </p>
-                        </div>
+                    <h2 class="fw-bold text-center">About Our Hostel</h2>
+                    <div class="row p-3">
+                        <p>Asansol Engineering College Hostels is a popular accommodation option for engineering
+                            students studying in Asansol. The hostel is known for its modern amenities,
+                            comfortable living spaces, and affordable pricing, making it an ideal choice for
+                            students seeking a home away from home. The hostel provides a safe and secure environment
+                            for students, with round-the-clock security personnel stationed at the premises. It also
+                            offers wide range of facilities such as a common room, study area, mess hall and
+                            recreational facilities to ensure that students can enjoy a well-rounded
+                            experience.</p>
+                        </p>
                     </div>
                 </section>
             </div>
 
             <div class="col-md-4">
-                <section id="news" class="bg-dark text-light">
+                <section id="news" class="bg-light text-dark scrolling-notice">
                     <h2 class="text-center">Latest News</h2>
                     <ul class="list-group">
-                        <li class="list-group-item">College to conduct online exams for odd semester students.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                        <li class="list-group-item mb-3">College to conduct online exams for odd semester students.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item">University announces new date for postponed semester exams.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                        <li class="list-group-item mb-3">University announces new date for postponed semester exams.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item">Annual sports tournament to be held on campus next month.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                        <li class="list-group-item mb-3">Annual sports tournament to be held on campus next month.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item">Chess tournament organized by the college attracts
+                        <li class="list-group-item mb-3">Chess tournament organized by the college attracts
                             participants from across the state.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
-                        <li class="list-group-item">College football team emerges victorious in intercollegiate
+                        <li class="list-group-item mb-3">College football team emerges victorious in intercollegiate
                             championship.
-                            <a href="http://aecwb.edu.in/?pn=1 " target="_blank"
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">College to conduct online exams for odd semester students.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">University announces new date for postponed semester exams.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Annual sports tournament to be held on campus next month.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Chess tournament organized by the college attracts
+                            participants from across the state.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">College to conduct online exams for odd semester students.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">University announces new date for postponed semester exams.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Annual sports tournament to be held on campus next month.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">Chess tournament organized by the college attracts
+                            participants from across the state.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">College football team emerges victorious in intercollegiate
+                            championship.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
+                                class="btn btn-primary btn-sm">ReadMore</a>
+                        </li>
+                        <li class="list-group-item mb-3">College football team emerges victorious in intercollegiate
+                            championship.
+                            <a href="http://aecwb.edu.in/?pn=1 " 
                                 class="btn btn-primary btn-sm">ReadMore</a>
                         </li>
                     </ul>
@@ -216,7 +316,7 @@
 
 
     <div class="container" id="hostelfacility">
-        <h2 class="text-center my-4">Our Hostels</h2>
+        <h2 class="fw-bold text-center my-4">Our Hostels</h2>
         <div class="row">
             <div class="col-lg-3 text-center">
                 <div class="card mb-4">
@@ -225,10 +325,10 @@
                             style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><b>Vivekanand Hostel</b></h5>
+                        <h4 class="card-title"><b>Vivekanand Hostel</b></h4>
                         <p class="card-text">Vivekanand Boys Hostel provides accommodation facilities exclusively
-                            for 1st-year male students.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                            for  <strong>1st-year male students</strong> .</p>
+                        <a href="ourHostels.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -240,10 +340,10 @@
                             style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><b>J.C Bose Boys Hostel</b></h5>
+                        <h4 class="card-title"><b>J.C Bose Boys Hostel</b></h4>
                         <p class="card-text">J.C Bose Boys Hostel provides accommodation facilities exclusively
-                            for 2nd & 3rd-year male students.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                            for <strong>2nd & 3rd-year male students</strong>  .</p>
+                        <a href="ourHostels.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -254,10 +354,10 @@
                             style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><b>A.P.J Boys Hostel</b></h5>
+                        <h4 class="card-title"><b>A.P.J Boys Hostel</b></h4>
                         <p class="card-text">APJ Boys Hostel provides accommodation facilities exclusively
-                            for 4th-year male students.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                            for <strong>4th-year male students</strong> .</p>
+                        <a href="ourHostels.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -268,10 +368,10 @@
                             style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><b>Sarojini Girls Hostel</b></h5>
+                        <h4 class="card-title"><b>Sarojini Girls Hostel</b></h4>
                         <p class="card-text">Sarojini Girls Hostel provides safe and comfortable accommodation
-                            for female students of all years.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                            for <strong>all years female students</strong> .</p>
+                        <a href="ourHostels.html" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -279,30 +379,16 @@
     </div>
 
     <div class="container my-5">
-        <h2 class="text-center">Hostel Facilities</h2>
+        <h2 class="fw-bold text-center">Hostel Facilities</h2>
         <div class="row">
-            <!-- <div class="col-md-3 mb-3">
-                <d class="card">
-                    <div class="card-body">
-                        <i class="fas fa-dumbbell fa-3x mb-3"></i>
-                        <h5 class="card-title">Gymnasium</h5>
-                        <p class="card-text">Our gym is equipped with modern machines and weights to help you stay fit.
-                            <br><br>
-                            <a href="#" target="_blank" class="btn btn-primary">Explore</a>
-                        </p>
-                    </div>
-                </d>
-            </div> -->
-
-
             <div class="col-md-3 mb-3">
                 <d class="card">
                     <div class="card-body">
-                        <i class="fas fa-baseball-ball fa-3x mb-3"></i>
-                        <h5 class="card-title">Game Zone</h5>
-                        <p class="card-text">We provides well-equipped playground for the
-                            residents to engage in sports. <br><br>
-                            <a href="#" target="_blank" class="btn btn-primary">Explore</a>
+                        <i class="fas fa-dumbbell fa-3x mb-3"></i>
+                        <h5 class="card-title">Gymnesium</h5>
+                        <p class="card-text">Our gym is equipped with modern machines and weights to help you stay fit.
+                            <br><br>
+                            <a href="gym.html"  class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -315,7 +401,7 @@
                         <h5 class="card-title">E-Library</h5>
                         <p class="card-text">Our hostel provides an E-library facility for convenient access to digital
                             resources. <br><br>
-                            <a href="learning.html" target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="learning.html"  class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -330,7 +416,7 @@
                         </h5>
                         <p class="card-text">Our hostel provides on-call doctor facility for the residents in emergency
                             case. <br><br>
-                            <a href="HealthFacility.html" target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="HealthFacility.html"  class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -343,7 +429,7 @@
                         <h5 class="card-title">Mess Facility</h5>
                         <p class="card-text">Our hostel provides a hygienic and nutritious mess facility to all the
                             residents.<br><br>
-                            <a href="messRoutine.html" target="_blank" class="btn btn-primary">Explore</a>
+                            <a href="messRoutine.html"  class="btn btn-primary">Explore</a>
                         </p>
                     </div>
                 </d>
@@ -355,8 +441,8 @@
 
 
     <div class="container">
-        <h2 class="text-center my-4">TESTIMONIAL</h2>
-        <h4 class="text-center my-4">What Students Say about Hostel</h4>
+        <h2 class="fw-bold text-center my-4">TESTIMONIAL</h2>
+        <h3 class="text-center my-4">What Students Say about Hostel</h3>
         <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="0"
@@ -376,8 +462,8 @@
                                     well-equipped gym to a spacious library. I would highly recommend this
                                     hostel to anyone looking for a comfortable and convenient place to stay."
                                 </p>
-                                <h5 class="card-title">Aman Kumar</h5>
-                                <p class="card-text">Cse Student</p>
+                                <h5 class="card-title">Aman Kumar, CSE (2019-2023)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
                             </div>
                         </div>
                     </div>
@@ -395,8 +481,8 @@
                                     needs, from a
                                     well-equipped gym to a spacious library."
                                 </p>
-                                <h5 class="card-title">Rahul Kumar</h5>
-                                <p class="card-text">Ece Student</p>
+                                <h5 class="card-title">Ankit Kumar, ECE (2018-2022)</h5>
+                                <!-- <p class="card-text">Ece Student</p> -->
                             </div>
                         </div>
                     </div>
@@ -412,8 +498,8 @@
                                     has been a wonderful experience. The facilities are top-notch and the staff
                                     is very friendly and helpful.The hostel has all the facilities a student
                                     needs, from a well-equipped gym to a spacious library."</p>
-                                <h5 class="card-title">Rohan Kumar</h5>
-                                <p class="card-text">Cse Student</p>
+                                <h5 class="card-title">Nikhil Kumar, CE (2016-2020)</h5>
+                                <!-- <p class="card-text">Cse Student</p> -->
                             </div>
                         </div>
                     </div>
@@ -436,7 +522,7 @@
 
     <!-- OUR PATRON SECTION -->
     <div class="container">
-        <h3 class="text-center my-4">OUR PATRONS</h3>
+        <h3 class="fw-bold text-center my-4">OUR PATRONS</h3>
         <div class="row">
             <div class="col-md-3">
                 <img src="http://aecwb.edu.in/img/dignitaries/4.jpg" class="img-fluid mb-3" alt="Principal AEC">
@@ -469,7 +555,7 @@
     <div class="container-fluid p-0" style="background-color: rgb(159, 210, 252);">
         <div id="contact" style="text-align: center;">
             <br />
-            <p class="text-dark fs-3 fw-bold mb-4"><span>Get In Touch</span></p>
+            <p class="text-dark fs-3 fw-bold fw-bold mb-4"><span>Get In Touch</span></p>
             <p><i class="fa fa-map-marker-alt fs-5 mr-2">Asansol Engineering College</i>, Vivekananda
                 Sarani,Kanyapur<br />Asansol - 713305<br />GPS Coordinate: 23° 42' 56.1924'' N and 86° 57' 5.7024''
                 E<br /><br />
@@ -485,22 +571,19 @@
             </p>
 
             <div class="text-center py-2" style="width:100%">
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;"
-                    target="_blank" href="https://twitter.com/AsansolCollege"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;"
-                    target="_blank" href="https://www.facebook.com/AEC1998/"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;"
-                    target="_blank" href="https://www.linkedin.com/company/aec-social"><i
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
+                     href="https://twitter.com/AsansolCollege"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
+                     href="https://www.facebook.com/AEC1998/"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
+                     href="https://www.linkedin.com/company/aec-social"><i
                         class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;"
-                    target="_blank" href="https://www.instagram.com/asansol_engineering_college/"><i
+                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;color: black;"
+                     href="https://www.instagram.com/asansol_engineering_college/"><i
                         class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -511,7 +594,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
 
     <div class="opaque">
         <div class="row">

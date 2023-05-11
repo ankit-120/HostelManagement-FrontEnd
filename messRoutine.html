@@ -6,78 +6,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mess Timetable</title>
   <link rel="stylesheet" href="css/background.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta3/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta3/js/bootstrap.min.js"></script>
   <style>
-    th,
-    td {
-      border: 1px solid white;
-      padding: 10px;
+    @media screen and (max-width: 768px) {
+      .table-responsive {
+        overflow-x: auto;
+      }
     }
   </style>
 </head>
 
-<body>
-  <div class="container" style="background-color: rgba(0, 0, 0, 0.8);padding: 20px;border-radius: 10px;margin-top: 5px;color: white">
-    <h1 class="text-light">Mess Routine</h1>
-    <table class="table table-striped table-bordered" style="border-collapse: separate;border-spacing: 0">
-      <thead>
-        <tr>
-          <th class="fs-4 fw-bold">Time</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-          <th>Sunday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Breakfast</td>
-          <td>Tea+Bread+Banana</td>
-          <td>Tea+Bread+Jam</td>
-          <td>Tea+Bread+Banana</td>
-          <td>Tea+Halua</td>
-          <td>Tea+Poha</td>
-          <td>Tea+Idli+Sambhar+Chatni</td>
-          <td>Tea+Puri+Sabji</td>
-        </tr>
-        <tr>
-          <td>Lunch</td>
-          <td>Rice+Dal+Sabji+Fish</td>
-          <td>Rice+Dal+Sabji+Egg</td>
-          <td>Rice+Dal+Sabji+Papad</td>
-          <td>Rice+Dal+Sabji+Chusta</td>
-          <td>Rice+Dal+Sabji+Fish</td>
-          <td>Rice+Dal+Sabji+Papad</td>
-          <td>Rice+Dal+Sabji+Bhujia</td>
-        </tr>
-        <tr>
-          <td>Supper</td>
-          <td>Tea+Ghughni</td>
-          <td>Tea+Bhujia</td>
-          <td>Tea+Kurkure</td>
-          <td>Tea+Chowmin</td>
-          <td>Tea+Biscuits</td>
-          <td>Tea+Chowmin</td>
-          <td>Tea+Bhujia</td>
-        </tr>
-        <tr>
-          <td>Dinner</td>
-          <td>Roti+Sabji+Chiken Curry</td>
-          <td>Puri+Sabji+Kheer</td>
-          <td>Roti+Sabji+Dal</td>
-          <td>Roti+Sabji+Dal</td>
-          <td>Roti+Sabji+Bhujia</td>
-          <td>Roti+Sabji+Chiken Curry</td>
-          <td>Roti+Sabji+Dal+Mithai</td>
-        </tr>
-      </tbody>
-    </table>
+<body class="m-5">
+  <div class="container"
+    style="background-color: rgba(0, 0, 0, 0.75);padding: 20px;border-radius: 10px;margin-top: 10px">
+    <p class="fs-2 fw-bold bg-primary text-light text-center">Mess Routine</p>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered" style="border-collapse: separate;border-spacing: 0">
+        <thead class="text-light">
+          <tr>
+            <th class="fs-4 fw-bold">Day→<br>Time↓</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+          </tr>
+        </thead>
+        <tbody class="text-light">
+          <tr>
+            <td class="text-light">Breakfast</td>
+            <td class="text-light">Tea+Bread+Banana</td>
+            <td class="text-light">Tea+Bread+Jam</td>
+            <td class="text-light">Tea+Bread+Banana</td>
+            <td class="text-light">Tea+Halua</td>
+            <td class="text-light">Tea+Poha</td>
+            <td class="text-light">Tea+Idli+Sambhar</td>
+            <td class="text-light">Tea+Puri+Sabji</td>
+          </tr>
+          <tr>
+            <td class="text-light">Lunch</td>
+            <td class="text-light">Rice+Dal+Sabji+Fish</td>
+            <td class="text-light">Rice+Dal+Sabji+Egg</td>
+            <td class="text-light">Rice+Dal+Sabji+Papad</td>
+            <td class="text-light">Rice+Dal+Sabji+Chusta</td>
+            <td class="text-light">Rice+Dal+Sabji+Fish</td>
+            <td class="text-light">Rice+Dal+Sabji+Papad</td>
+            <td class="text-light">Rice+Dal+Sabji+Bhujia</td>
+          </tr>
+          <tr>
+            <td class="text-light">Supper</td>
+            <td class="text-light">Tea+Ghughni</td>
+            <td class="text-light">Tea+Bhujia</td>
+            <td class="text-light">Tea+Kurkure</td>
+            <td class="text-light">Tea+Chowmin</td>
+            <td class="text-light">Tea+Biscuits</td>
+            <td class="text-light">Tea+Chowmin</td>
+            <td class="text-light">Tea+Bhujia</td>
+          </tr>
+          <tr>
+            <td class="text-light">Dinner</td>
+            <td class="text-light">Roti+Sabji+Chiken</td>
+            <td class="text-light">Puri+Sabji+Kheer</td>
+            <td class="text-light">Roti+Sabji+Dal</td>
+            <td class="text-light">Roti+Sabji+Dal</td>
+            <td class="text-light">Roti+Sabji+Bhujia</td>
+            <td class="text-light">Roti+Sabji+Chiken</td>
+            <td class="text-light">Roti+Sabji+Dal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="text-center">
+    <a class="btn mt-3 bg-warning fw-bold text-dark px-4 py-2 text-center" href="index.html"
+      style="text-decoration: none">Back</a>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
