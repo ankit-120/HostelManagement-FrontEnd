@@ -1,5 +1,8 @@
-let token = localStorage.getItem("token");
-console.log(token);
+let token = localStorage.getItem('token');
+if (token == null) {
+    window.location.href = "admin.html";
+}
+
 
 //Base url
 let BASE_URL = 'http://localhost:8080/hms/';

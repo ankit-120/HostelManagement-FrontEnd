@@ -1,4 +1,7 @@
 let token = localStorage.getItem('token');
+if (token == null) {
+    window.location.href = "admin.html";
+}
 let BASE_URL='http://localhost:8080/hms/';
 let submit = document.getElementById("submit");
 

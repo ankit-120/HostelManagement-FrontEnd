@@ -9,8 +9,9 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
     <style>
         .opaque {
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.65);
             color: gainsboro;
+
         }
     </style>
 </head>
@@ -22,14 +23,16 @@
             <h1 class="text-light">Welcome to Hostel Facility Management System</h1>
         </div>
 
-        <div class="opacity-75">
+        <div class="">
             <div class="row">
-                <div class="col-4 offset-4 card p-0">
-                    <div class="card-header fs-1 text-center bg-dark text-light">Login
+                <div class="col-4 offset-4 py-5 opaque">
+                    <div class=" fs-1 text-center ">Login
                     </div>
 
                     <form>
-                        <div class="py-3 card-body bg-dark text-light">
+                        <div class="py-3">
+                            <div id="alert-box" class="alert alert-danger d-none text-center" role="alert">
+                            </div>
                             <div class="col-8 offset-2 fs-5">
                                 <label for="email">Email address</label>
                                 <input type="email" class="form-control" id="email" size="20"
@@ -42,16 +45,17 @@
                                     placeholder="Enter your password" required />
                             </div>
                         </div>
-                        <div class="text-center card-footer bg-dark text-light">
-                            <div class="forgotPassword_link mb-3"><a href="/forgotPassword.html">Forgot Password?</a>
+                        <div class="text-center">
+                            <div class="forgotPassword_link mb-3"><a href="/forgotPassword.html"
+                                    style="text-decoration: none;">Forgot Password?</a>
                             </div>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <button type="button" class="btn btn-warning bg-opacity-100 fs-4"
+                                    <button type="button" class="btn btn-outline-warning bg-opacity-100 fs-5"
                                         id="back">Back</button>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-primary bg-opacity-100 fs-4"
+                                    <button type="submit" class="btn btn-outline-primary bg-opacity-100 fs-5"
                                         id="login">Login</button>
                                 </div>
                             </div>

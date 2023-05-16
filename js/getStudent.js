@@ -1,5 +1,7 @@
-let token = localStorage.getItem("token");
-console.log(token)
+let token = localStorage.getItem('token');
+if (token == null) {
+    window.location.href = "admin.html";
+}
 
 //setting user name at navbar
 document.getElementById("userSpan").innerText = localStorage.getItem("username");

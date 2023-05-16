@@ -27,5 +27,23 @@ login.onclick = async (e) => {
         window.location.href="admin.html"
         // localStorage.removeItem("token");
     }
+    else{
+        let alertBox = document.getElementById("alert-box");
+        console.log("Inside else");
+        let res = await response.json();
+        let key = Object.keys(res);
+        let errMsg="";
+        key.forEach((i)=>{
+            if(res[i]!==false){
+                errMsg+=`${res[i]}\n`
+            }
+        })
+        alertBox.innerText = errMsg;
+        alertBox.classList.remove("d-none");
+        setTimeout(()=>{
+            alertBox.classList.add("d-none");
+        },10000);
+        console.log(errMsg);
+    }
     console.log("leaving page")
 }
