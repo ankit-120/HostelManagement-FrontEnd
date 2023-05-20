@@ -42,7 +42,7 @@ search.addEventListener('click', (e) => {
 
 let BASE_URL = 'http://localhost:8080/hms/';
 
-function loadData() {
+function loadData(status) {
 
   //getting data from local Storage
   let student = localStorage.getItem("data");
@@ -56,34 +56,55 @@ function loadData() {
   let tblBody = document.getElementById("tableBody");
 
   for (let i = 0; i < r; i++) {
-    let tr = document.createElement("tr");
-    let cols = "";
-    cols += `<td>${obj[i].id}</td>`;
-    cols += `<td>${obj[i].roll}</td>`;
-    cols += `<td>${obj[i].roomNo}</td>`;
-    cols += `<td>${obj[i].isActive=='1'?"Active":"Inactive"}</td> `;
-    cols += `<td>${obj[i].firstName}</td>`;
-    cols += `<td>${obj[i].middleName}</td>`;
-    cols += `<td>${obj[i].lastName}</td>`;
-    cols += `<td>${obj[i].aadhaar}</td>`;
-    cols += `<td>${obj[i].mobile}</td>`;
-    cols += `<td>${obj[i].email}</td>`;
-    cols += `<td>${obj[i].course}</td>`;
-    cols += `<td>${obj[i].gender}</td>`;
-    cols += `<td>${obj[i].street}</td>`;
-    cols += `<td>${obj[i].city}</td>`;
-    cols += `<td>${obj[i].state}</td>`;
-    cols += `<td>${obj[i].department}</td>`;
-    
-    cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
-    cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`;
-    tr.innerHTML = cols;
-    tblBody.appendChild(tr);
+    if(obj[i].isActive == status){
+      let tr = document.createElement("tr");
+      let cols = "";
+      cols += `<td>${obj[i].id}</td>`;
+      cols += `<td>${obj[i].roll}</td>`;
+      cols += `<td>${obj[i].roomNo}</td>`;
+      cols += `<td>${obj[i].isActive=='1'?"Active":"Inactive"}</td> `;
+      cols += `<td>${obj[i].firstName}</td>`;
+      cols += `<td>${obj[i].middleName}</td>`;
+      cols += `<td>${obj[i].lastName}</td>`;
+      cols += `<td>${obj[i].aadhaar}</td>`;
+      cols += `<td>${obj[i].mobile}</td>`;
+      cols += `<td>${obj[i].email}</td>`;
+      cols += `<td>${obj[i].course}</td>`;
+      cols += `<td>${obj[i].gender}</td>`;
+      cols += `<td>${obj[i].street}</td>`;
+      cols += `<td>${obj[i].city}</td>`;
+      cols += `<td>${obj[i].state}</td>`;
+      cols += `<td>${obj[i].department}</td>`;
+      
+      cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
+      cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`;
+      tr.innerHTML = cols;
+      tblBody.appendChild(tr);
+    }
   }
 }
 
 //loading the table
-loadData();
+loadData(1);
+let toggle = document.getElementById("switch");
+toggle.onclick = () =>{
+  if(toggle.innerText == "Inactive"){
+    toggle.innerText = "Active";
+    let tblBody = document.getElementById("tableBody");
+    while (tblBody.firstChild) {
+      tblBody.removeChild(tblBody.firstChild);
+    }
+    loadData(0);
+    
+  }else{
+    toggle.innerText = "Inactive";
+    let tblBody = document.getElementById("tableBody");
+    while (tblBody.firstChild) {
+      tblBody.removeChild(tblBody.firstChild);
+    }
+    loadData(1);
+  }
+}
 
 
 //delete student.....................................................................
