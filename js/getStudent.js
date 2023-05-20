@@ -60,6 +60,8 @@ function loadData() {
     let cols = "";
     cols += `<td>${obj[i].id}</td>`;
     cols += `<td>${obj[i].roll}</td>`;
+    cols += `<td>${obj[i].roomNo}</td>`;
+    cols += `<td>${obj[i].isActive=='1'?"Active":"Inactive"}</td> `;
     cols += `<td>${obj[i].firstName}</td>`;
     cols += `<td>${obj[i].middleName}</td>`;
     cols += `<td>${obj[i].lastName}</td>`;
@@ -71,6 +73,8 @@ function loadData() {
     cols += `<td>${obj[i].street}</td>`;
     cols += `<td>${obj[i].city}</td>`;
     cols += `<td>${obj[i].state}</td>`;
+    cols += `<td>${obj[i].department}</td>`;
+    
     cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
     cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`;
     tr.innerHTML = cols;
@@ -135,17 +139,21 @@ function update(obj) {
   let table = obj.parentElement.parentElement;
   id = table.cells[0].innerText;
   document.getElementById("roll").value = table.cells[1].innerText;
-  document.getElementById("firstName").value = table.cells[2].innerText;
-  document.getElementById("middleName").value = table.cells[3].innerText;
-  document.getElementById("lastName").value = table.cells[4].innerText;
-  document.getElementById("contact").value = table.cells[6].innerText;
-  document.getElementById("aadhaarno").value = table.cells[5].innerText;
-  document.getElementById("email").value = table.cells[7].innerText;
-  document.getElementById("course").value = table.cells[8].innerText;
-  document.getElementById("gender").value = table.cells[9].innerText;
-  document.getElementById("street").value = table.cells[10].innerText;
-  document.getElementById("city").value = table.cells[11].innerText;
-  document.getElementById("state").value = table.cells[12].innerText;
+  // document.getElementById("").value = table.cells[2].innerText;
+  document.getElementById("roll").value = table.cells[1].innerText;
+  document.getElementById("firstName").value = table.cells[4].innerText;
+  document.getElementById("middleName").value = table.cells[5].innerText;
+  document.getElementById("lastName").value = table.cells[6].innerText;
+  document.getElementById("contact").value = table.cells[8].innerText;
+  document.getElementById("aadhaarno").value = table.cells[7].innerText;
+  document.getElementById("email").value = table.cells[9].innerText;
+  document.getElementById("course").value = table.cells[10].innerText;
+  document.getElementById("gender").value = table.cells[11].innerText;
+  document.getElementById("street").value = table.cells[12].innerText;
+  document.getElementById("city").value = table.cells[13].innerText;
+  document.getElementById("state").value = table.cells[14].innerText;
+  document.getElementById("department").value = table.cells[15].innerText;
+  console.log(table.cells[15].innerText);
 
 }
 

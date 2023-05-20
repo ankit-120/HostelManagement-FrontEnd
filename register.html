@@ -92,10 +92,10 @@
 
                 <div class="col-10 offset-1 d-flex justify-content-between my-1">
 
-                    <div style="width: 250px;">
+                    <div style="width: 180px;">
                         <label for="gender" class="form-label">Gender</label>
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="gender"
-                            required>
+                            required="">
                             <option>--Select--</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -103,7 +103,22 @@
                         </select>
                     </div>
 
-                    <div style="width: 250px;">
+                    <div style="width: 180px;">
+                        <label for="department" class="form-label">Department</label>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="department"
+                            required="">
+                            <option>--Select--</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="IT">IT</option>
+                            <option value="AIML">AIML</option>
+                        </select>
+                    </div>
+
+                    <div style="width: 180px;">
                         <label for="course" class=" form-label">Choose Course</label>
                         <select class="form-select form-select-sm form-select-inline-sm" id="course">
                             <option>--Select--</option>
@@ -118,12 +133,21 @@
                 </div>
 
                 <div class="col-10 offset-1 my-1 d-flex justify-content-between">
-                    <div style="width: 250px;">
+                    <div style="width: 180px;">
                         <label for="aadhaarno" class="form-label"> Aadhaar Number</label>
-                        <input type="text" minlength="12" maxlength="12" class="form-control" name="phone"
+                        <input type="text" minlength="12" maxlength="12" class="form-control" 
                             placeholder="Enter your aadhaar no" id="aadhaarno" required />
                     </div>
-                    <div class="" style="width: 250px;">
+
+                    <div style="width: 180px;">
+                        <label for="year" class="form-label"> Year</label>
+                        <input type="text" minlength="12" maxlength="12" class="form-control" 
+                            placeholder="Enter year" id="year" required />
+                    </div>
+
+
+
+                    <div class="" style="width: 180px;">
                         <label for="email" class="form-label">Roll Number</label>
                         <input type="text" class="form-control" id="roll" placeholder="Enter roll number" required>
                     </div>

@@ -23,6 +23,8 @@ else {
         let street = document.getElementById("street").value;
         let city = document.getElementById("city").value;
         let state = document.getElementById("state").value;
+        let department = document.getElementById("department").value;
+        let year = document.getElementById("year").value;
 
         user = {
             firstName: firstName,
@@ -36,7 +38,9 @@ else {
             email: email,
             street: street,
             city: city,
-            state: state
+            state: state,
+            department: department,
+            year:year 
         };
 
         let data = JSON.stringify(user);

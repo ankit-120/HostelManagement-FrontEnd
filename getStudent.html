@@ -57,29 +57,36 @@
             </div>
         </div>
         <!-- <div id="table"></div> -->
+        <div class="row overflow-auto mb-3">
 
-        <table id="myTable" class="table opaque">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Rollno</th>
-                    <th>FirstName</th>
-                    <th>MiddleName</th>
-                    <th>LastName</th>
-                    <th>Aadhaar No</th>
-                    <th>Mobile</th>
-                    <th>Email</th>
-                    <th>Course</th>
-                    <th>Gender</th>
-                    <th>Street</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th colspan="2">Action</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-            </tbody>
-        </table>
+            <table id="myTable" class="table opaque">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Rollno</th>
+                        <th>RoomNo</th>
+                        <th>Status</th>
+                        <th>FirstName</th>
+                        <th>MiddleName</th>
+                        <th>LastName</th>
+                        <th>Aadhaar No</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Gender</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Department</th>
+                        
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
         <div class="text-center">
             <button class="btn btn-primary" id="back">Back</button>
         </div>
@@ -141,7 +148,7 @@
 
                                 <div class="col-10 offset-1 d-flex justify-content-between my-1">
 
-                                    <div style="width: 300px;">
+                                    <div style="width: 180px;">
                                         <label for="gender" class="form-label">Gender</label>
                                         <select class="form-select form-select-sm" aria-label=".form-select-sm example"
                                             id="gender" required>
@@ -152,7 +159,22 @@
                                         </select>
                                     </div>
 
-                                    <div style="width: 300px;">
+                                    <div style="width: 180px;">
+                                        <label for="department" class="form-label">Department</label>
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="department"
+                                            required="">
+                                            <option>--Select--</option>
+                                            <option value="cse">CSE</option>
+                                            <option value="ece">ECE</option>
+                                            <option value="me">ME</option>
+                                            <option value="ce">CE</option>
+                                            <option value="ee">EE</option>
+                                            <option value="it">IT</option>
+                                            <option value="aiml">AIML</option>
+                                        </select>
+                                    </div>
+
+                                    <div style="width: 180px;">
                                         <label for="course" class=" form-label">Choose Course</label>
                                         <select class="form-select form-select-sm form-select-inline-sm" id="course">
                                             <option>--Select--</option>
