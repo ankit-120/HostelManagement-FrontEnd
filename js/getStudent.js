@@ -75,6 +75,7 @@ function loadData(status) {
       cols += `<td>${obj[i].city}</td>`;
       cols += `<td>${obj[i].state}</td>`;
       cols += `<td>${obj[i].department}</td>`;
+      cols += `<td>${obj[i].year}</td>`;
       
       cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
       cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`;
@@ -147,7 +148,7 @@ deleteYes.onclick = async(e)=>{
   }
 
   //loading the new data after update
-  loadData();
+  loadData(1);
 
 }
 //delete ends here....................................................................
@@ -155,12 +156,14 @@ deleteYes.onclick = async(e)=>{
 
 //update student........................................................
 let id;
+let isActive;
+let roomNo;
+
 function update(obj) {
   console.log(obj.parentElement.parentElement);
   let table = obj.parentElement.parentElement;
   id = table.cells[0].innerText;
-  document.getElementById("roll").value = table.cells[1].innerText;
-  // document.getElementById("").value = table.cells[2].innerText;
+
   document.getElementById("roll").value = table.cells[1].innerText;
   document.getElementById("firstName").value = table.cells[4].innerText;
   document.getElementById("middleName").value = table.cells[5].innerText;
@@ -174,7 +177,9 @@ function update(obj) {
   document.getElementById("city").value = table.cells[13].innerText;
   document.getElementById("state").value = table.cells[14].innerText;
   document.getElementById("department").value = table.cells[15].innerText;
-  console.log(table.cells[15].innerText);
+  document.getElementById("year").value = table.cells[16].innerText;
+  isActive = table.cells[3].innerText=="Active"?1:0;
+  roomNo = table.cells[2].innerText;
 
 }
 
@@ -194,6 +199,9 @@ edit.onclick = async (e) => {
   let street = document.getElementById("street").value;
   let city = document.getElementById("city").value;
   let state = document.getElementById("state").value;
+  let department = document.getElementById("department").value;
+  let year = document.getElementById("year").value;
+
 
 
   user = {
@@ -208,7 +216,10 @@ edit.onclick = async (e) => {
     email: email,
     street: street,
     city: city,
-    state: state
+    state: state,
+    department: department,
+    year: year
+
   };
   user1 = {
     id: id,
@@ -223,7 +234,11 @@ edit.onclick = async (e) => {
     email: email,
     street: street,
     city: city,
-    state: state
+    state: state,
+    department: department,
+    year: year,
+    isActive: isActive,
+    roomNo : roomNo
   };
 
   //finding the id to be updated in local Storage
@@ -245,7 +260,7 @@ edit.onclick = async (e) => {
   }
 
   //loading the new data after update
-  loadData();
+  loadData(1);
 
   let data = JSON.stringify(user);
   let options = {
