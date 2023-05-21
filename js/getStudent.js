@@ -11,6 +11,31 @@ const nameList = document.getElementById('myTable');
 const nameSearch = document.getElementById('searchBox');
 const search = document.getElementById('search');
 
+nameSearch.addEventListener('keyup', (e) => {
+  e.preventDefault();
+  const query = nameSearch.value.toLowerCase();
+  const names = nameList.getElementsByTagName('tr');
+  let flag = false;
+
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i].textContent.toLowerCase();
+    if (name.includes(query)) {
+      console.log("inside if")
+      names[0].style.display = '';
+      names[i].style.display = '';
+      // res.innerText="";
+      flag = true;
+    } else {
+      console.log("inside else")
+
+      names[i].style.display = 'none';
+    }
+  }
+  if (!flag) {
+    res.innerText = "Student Doesn't Exists";
+    res.classList.add("p-3");
+  }
+});
 
 search.addEventListener('click', (e) => {
   e.preventDefault();
@@ -77,8 +102,13 @@ function loadData(status) {
       cols += `<td>${obj[i].department}</td>`;
       cols += `<td>${obj[i].year}</td>`;
       
-      cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
-      cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`;
+      if(obj[i].isActive != 0){
+        cols += `<td><a id="button" type="button" class="fs-4" onclick="update(this)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><i class="bi bi-pencil-square"></i></a></td>`;
+        cols += `<td><a id="delete" type="button" class="text-danger fs-4" onclick="deleteStudent(this)" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="bi bi-trash"></i></a></td>`; 
+      }else{
+        cols += `<td> - - </td>`;
+        cols += `<td> - - </td>`;
+      }
       tr.innerHTML = cols;
       tblBody.appendChild(tr);
     }
@@ -89,8 +119,8 @@ function loadData(status) {
 loadData(1);
 let toggle = document.getElementById("switch");
 toggle.onclick = () =>{
-  if(toggle.innerText == "Inactive"){
-    toggle.innerText = "Active";
+  if(toggle.innerText == "Click for inactive"){
+    toggle.innerText = "Click for active";
     let tblBody = document.getElementById("tableBody");
     while (tblBody.firstChild) {
       tblBody.removeChild(tblBody.firstChild);
@@ -98,7 +128,7 @@ toggle.onclick = () =>{
     loadData(0);
     
   }else{
-    toggle.innerText = "Inactive";
+    toggle.innerText = "Click for inactive";
     let tblBody = document.getElementById("tableBody");
     while (tblBody.firstChild) {
       tblBody.removeChild(tblBody.firstChild);
@@ -133,7 +163,8 @@ deleteYes.onclick = async(e)=>{
   let localStorageArray = JSON.parse(localStorage.getItem("data"));
   for (let i = 0; i < localStorageArray.length; i++) {
     if (localStorageArray[i].id == deleteId) {
-      localStorageArray.splice(i, 1);
+      // localStorageArray.splice(i, 1);
+      localStorageArray[i].isActive = 0;
       break;
     }
   }
@@ -281,12 +312,33 @@ edit.onclick = async (e) => {
     // window.location.href="admin.html"
   } else {
     let res = await response.json();
+    let errorKeys = Object.keys(res);
+    let errorMsg = "";
+    for (let i=0;i<errorKeys.length;i++) {
+        errorMsg+="<h6>"+errorKeys[i].toUpperCase() + " : "+ res[errorKeys[i]]+"\n"+"</h6>";
+    }
+    Swal.fire({
+        title: `${errorMsg}`,
+        // text: `Your room no. is ${res.roomNo}`,
+        confirmButtonText: 'OK',
+      }).then(() => {
+        // window.location.href = "admin.html"
+      })
     console.log(res);
   }
 }
 // update ends here.............................................
 
-
+//logout
+let logout = document.getElementById("logout")
+logout.onclick = async () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("adminData");
+    localStorage.removeItem("data");
+    window.location.href = "login.html"
+}
 
 //back button
 let backBtn = document.getElementById("back");

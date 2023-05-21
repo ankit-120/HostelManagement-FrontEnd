@@ -56,7 +56,29 @@ else {
         if (response.status == 201) {
             let res = await response.json();
             console.log(res);
-            window.location.href = "admin.html"
+            Swal.fire({
+                title: `Details of roll : ${res.roll}`,
+                text: `Your room no. is ${res.roomNo}`,
+                confirmButtonText: 'OK',
+              }).then(() => {
+                window.location.href = "admin.html"
+              })
+        }
+        else{
+            let res = await response.json();
+            // let errorRes = JSON.stringify(res);
+            let errorKeys = Object.keys(res);
+            let errorMsg = "";
+            for (let i=0;i<errorKeys.length;i++) {
+                errorMsg+="<h5>"+errorKeys[i].toUpperCase() + " : "+ res[errorKeys[i]]+"\n"+"</h5>";
+            }
+            Swal.fire({
+                title: `${errorMsg}`,
+                // text: `Your room no. is ${res.roomNo}`,
+                confirmButtonText: 'OK',
+              }).then(() => {
+                // window.location.href = "admin.html"
+              })
         }
     }
 }
@@ -67,6 +89,9 @@ let logout = document.getElementById("logout")
 logout.onclick = async () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("adminData");
+    localStorage.removeItem("data");
     window.location.href = "login.html"
 }
 

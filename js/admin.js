@@ -66,6 +66,9 @@ let logout = document.getElementById("logout")
 logout.onclick = async () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("data");
+    localStorage.removeItem("adminData");
     window.location.href = "login.html"
 }
 

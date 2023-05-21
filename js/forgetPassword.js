@@ -5,11 +5,22 @@ resetPassword.onclick = async (e) => {
     let email=document.getElementById("email").value;
     let password=document.getElementById("password").value;
     let confirmPassword=document.getElementById("confirmPassword").value;
+
+    if(email=="" || password == "" || confirmPassword == "") {
+        let header=document.getElementById("alert");
+        header.classList.remove('d-none');
+        header.innerHTML= `<h3 class="text-center text-danger">Feilds must not be empty</h3>`
+        setTimeout(() => {
+            header.classList.add("d-none");
+          }, 3000)
+        return;
+    }    
+
     if(password !== confirmPassword) {
         let header=document.getElementById("alert");
         header.classList.remove('d-none');
         document.getElementById("password").value="";
-        confirmPassword=document.getElementById("confirmPassword").value="";
+        document.getElementById("confirmPassword").value="";
         header.innerHTML= `<h3 class="text-center text-danger">Password do not match</h3>`
         setTimeout(() => {
             header.classList.add("d-none");

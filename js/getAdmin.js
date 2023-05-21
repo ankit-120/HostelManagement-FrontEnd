@@ -16,6 +16,32 @@ const nameSearch = document.getElementById('searchBox');
 const search = document.getElementById('search');
 
 
+nameSearch.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    const query = nameSearch.value.toLowerCase();
+    const names = nameList.getElementsByTagName('tr');
+    let flag = false;
+  
+    for (let i = 0; i < names.length; i++) {
+      const name = names[i].textContent.toLowerCase();
+      if (name.includes(query)) {
+        console.log("inside if")
+        names[0].style.display = '';
+        names[i].style.display = '';
+        // res.innerText="";
+        flag = true;
+      } else {
+        console.log("inside else")
+  
+        names[i].style.display = 'none';
+      }
+    }
+    if (!flag) {
+      res.innerText = "Student Doesn't Exists";
+      res.classList.add("p-3");
+    }
+  });
+
 search.addEventListener('click', (e) => {
     e.preventDefault();
     const query = nameSearch.value.toLowerCase();
@@ -85,59 +111,79 @@ edit.onclick = async (e) => {
     e.preventDefault();
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
-
-
-    user = {
-        fullName: name,
-        email: email
-    };
-    user1 = {
-        id: id,
-        fullName: name,
-        email: email
-    };
-
-    //finding the id to be updated in local Storage
-    let localStorageArray = JSON.parse(localStorage.getItem("adminData"));
-    for (let i = 0; i < localStorageArray.length; i++) {
-        if (localStorageArray[i].id == id) {
-            localStorageArray[i] = user1;
-            break;
-        }
-    }
-
-    //replacing the old object with new object in local Storage
-    localStorage.setItem("adminData", JSON.stringify(localStorageArray));
-
-    //remove child(tr from table body)
-    let tblBody = document.getElementById("tableBody");
-    while (tblBody.firstChild) {
-        tblBody.removeChild(tblBody.firstChild);
-    }
-
-    //loading the new data after update
-    loadData();
-
-    let data = JSON.stringify(user);
-    let options = {
-        method: 'PUT',
-        headers: {
-            'Authorization': token,
-            'Content-Type': 'application/json',
-        },
-        body: data
-    }
-
-    let response = await fetch(`${BASE_URL}admin/update/${id}`, options);
-
-    if (response.status == 200) {
-        let res = await response.json();
-        console.log(res);
-
-        // window.location.href="admin.html"
+    let alertBox = document.getElementById("alert");
+    if(email=="" || name == ""){
+        alertBox.innerText = "Email and Name must not be empty";
+        alertBox.classList.remove("d-none");
+        setTimeout(()=>{
+            alertBox.classList.add("d-none");
+        },3000);
     } else {
-        let res = await response.json();
-        console.log(res);
+
+        user = {
+            fullName: name,
+            email: email
+        };
+        user1 = {
+            id: id,
+            fullName: name,
+            email: email
+        };
+    
+        //finding the id to be updated in local Storage
+        let localStorageArray = JSON.parse(localStorage.getItem("adminData"));
+        for (let i = 0; i < localStorageArray.length; i++) {
+            if (localStorageArray[i].id == id) {
+                localStorageArray[i] = user1;
+                break;
+            }
+        }
+    
+        //replacing the old object with new object in local Storage
+        localStorage.setItem("adminData", JSON.stringify(localStorageArray));
+    
+        //remove child(tr from table body)
+        let tblBody = document.getElementById("tableBody");
+        while (tblBody.firstChild) {
+            tblBody.removeChild(tblBody.firstChild);
+        }
+    
+        //loading the new data after update
+        loadData();
+    
+        let data = JSON.stringify(user);
+        let options = {
+            method: 'PUT',
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'application/json',
+            },
+            body: data
+        }
+    
+        let response = await fetch(`${BASE_URL}admin/update/${id}`, options);
+    
+        if (response.status == 200) {
+            let res = await response.json();
+            console.log(res);
+    
+            // window.location.href="admin.html"
+        } else {
+            let res = await response.json();
+            // let errorRes = JSON.stringify(res);
+            let errorKeys = Object.keys(res);
+            let errorMsg = "";
+            for (let i=0;i<errorKeys.length;i++) {
+                errorMsg+="<h6>"+errorKeys[i].toUpperCase() + " : "+ res[errorKeys[i]]+"\n"+"</h6>";
+            }
+            Swal.fire({
+                title: `${errorMsg}`,
+                // text: `Your room no. is ${res.roomNo}`,
+                confirmButtonText: 'OK',
+                }).then(() => {
+                // window.location.href = "admin.html"
+                })
+        }
     }
 }
 // update ends here.............................................
@@ -152,6 +198,7 @@ async function deleteStudent(admin) {
 let deleteYes = document.getElementById("deleteYes");
 deleteYes.onclick = async (e) => {
     e.preventDefault();
+
     let options = {
         method: 'DELETE',
         headers: {
@@ -160,13 +207,30 @@ deleteYes.onclick = async (e) => {
     }
 
     let response = await fetch(`${BASE_URL}admin/delete/${deleteId}`, options);
-    let res = await response.json();
-    console.log(res);
-
+    if (response.status == 200) {
+        let res = await response.json();
+        console.log(res);
+        Swal.fire({
+            title: `${res.message}`,
+            confirmButtonText: 'OK',
+          }).then(() => {
+            
+          })
+    } else {
+        let res = await response.json();
+        console.log(res);
+        Swal.fire({
+            title: `${res.message}`,
+            confirmButtonText: 'OK',
+          }).then(() => {
+            
+          })
+    }
+    let id=localStorage.getItem("user_id");
     //finding the id to be deleted in local Storage
-    let localStorageArray = JSON.parse(localStorage.getItem("data"));
+    let localStorageArray = JSON.parse(localStorage.getItem("adminData"));
     for (let i = 0; i < localStorageArray.length; i++) {
-        if (localStorageArray[i].id == deleteId) {
+        if (localStorageArray[i].id == deleteId && deleteId!=id) {
             localStorageArray.splice(i, 1);
             break;
         }
@@ -188,6 +252,16 @@ deleteYes.onclick = async (e) => {
 //delete ends here....................................................................
 
 
+//logout
+let logout = document.getElementById("logout")
+logout.onclick = async () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("data");
+    localStorage.removeItem("adminData");
+    window.location.href = "login.html"
+}
 
 //back button
 let backBtn = document.getElementById("back");
