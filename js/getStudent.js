@@ -23,6 +23,7 @@ nameSearch.addEventListener('keyup', (e) => {
       console.log("inside if")
       names[0].style.display = '';
       names[i].style.display = '';
+      res.classList.add("d-none");
       // res.innerText="";
       flag = true;
     } else {
@@ -32,6 +33,7 @@ nameSearch.addEventListener('keyup', (e) => {
     }
   }
   if (!flag) {
+    res.classList.remove("d-none")
     res.innerText = "Student Doesn't Exists";
     res.classList.add("p-3");
   }
@@ -49,6 +51,7 @@ search.addEventListener('click', (e) => {
       console.log("inside if")
       names[0].style.display = '';
       names[i].style.display = '';
+      res.classList.add("d-none");
       // res.innerText="";
       flag = true;
     } else {
@@ -58,6 +61,7 @@ search.addEventListener('click', (e) => {
     }
   }
   if (!flag) {
+    res.classList.remove("d-none")
     res.innerText = "Student Doesn't Exists";
     res.classList.add("p-3");
   }
